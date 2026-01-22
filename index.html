@@ -12,6 +12,14 @@
         font-family: 'Inter', sans-serif;
         background-color: #f8fafc;
       }
+      /* Ocultar barra de rolagem mas manter funcionalidade */
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
     </style>
   <script type="importmap">
 {
@@ -20,12 +28,16 @@
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
     "react/": "https://esm.sh/react@^19.2.3/",
     "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
-    "recharts": "https://esm.sh/recharts@^3.7.0"
+    "recharts": "https://esm.sh/recharts@^3.7.0",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
   }
 }
 </script>
 </head>
   <body>
     <div id="root"></div>
+    <!-- Ponto de entrada crucial para o Vite e Vercel -->
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
